@@ -19,5 +19,11 @@ public class TaskDaoImpl implements TaskDao {
         return jdbcTemplate.query(sql, new TaskMapper());
     }
 
+    public void save(Task task) {
+        String sql = "INSERT INTO task (user_id, task, status) VALUES (?, ?, ?)";
+        jdbcTemplate.update(sql, task.getUser_id(), task.getTask(), task.getStatus());
+
+    }
+
 
 }

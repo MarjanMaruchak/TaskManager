@@ -8,4 +8,6 @@ public interface TaskService {
 
     List<Task> findAll();
 
+    void save(Task task) throws Exception;
+
 }

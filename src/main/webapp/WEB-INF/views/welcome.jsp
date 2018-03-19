@@ -16,6 +16,7 @@
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 
+
 </head>
 <body>
 
@@ -44,6 +45,17 @@
             </c:forEach>
         </table>
     </c:if>
+
+    <form name="Task" action="/addtask" method="post">
+        <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
+        <p>user_id</p>
+        <input title="user_id" type="number" name="user_id">
+        <p>task</p>
+        <input title="task" type="text" name="task">
+        <p>status</p>
+        <input title="status" type="number" name="status">
+        <input type="submit" value="OK">
+    </form>
 
     <button class="btn btn-lg btn-primary btn-block" type=" ">Add task</button>
 

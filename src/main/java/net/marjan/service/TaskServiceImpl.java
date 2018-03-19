@@ -18,4 +18,12 @@ public class TaskServiceImpl implements TaskService {
         return taskDao.findAll();
     }
 
+
+    public void save(Task task) throws Exception {
+        if (task.getTask().length() < 2) {
+            throw new Exception();
+        }
+        taskDao.save(task);
+    }
+
 }

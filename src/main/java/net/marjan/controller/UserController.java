@@ -1,5 +1,6 @@
 package net.marjan.controller;
 
+import net.marjan.model.Task;
 import net.marjan.model.User;
 import net.marjan.service.SecurityService;
 import net.marjan.service.TaskService;
@@ -73,5 +74,11 @@ public class UserController {
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Model model) {
         return "admin";
+    }
+
+    @RequestMapping(value = "/addtask", method = RequestMethod.POST)
+    public String addTask(@ModelAttribute("task") Task task) throws Exception {
+        taskService.save(task);
+        return "redirect:/welcome";
     }
 }

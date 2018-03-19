@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TaskDao {
     List<Task> findAll();
+
+    void save(Task task);
 }
